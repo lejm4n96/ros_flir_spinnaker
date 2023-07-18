@@ -314,7 +314,7 @@ int phm::SpinnakerCamera::next(sensor_msgs::Image * frame, Spinnaker::ImageStatu
                 // Fill the image
                 sensor_msgs::fillImage(* frame, imageEncoding, 
                     height, width, stride, img->GetData());
-                frame->header.frame_id = std::to_string(img->GetFrameID());
+                frame->header.frame_id = "flir_thermal_optical_frame";
             }
             // Release the collected frame
             img->Release();
