@@ -99,6 +99,12 @@ target_link_libraries(flir_node
 )
 add_dependencies(flir_node ${PROJECT_NAME}_gencfg)
 
+add_executable(calibration_publisher_node src/calibration_publisher_node.cpp)
+target_link_libraries(calibration_publisher_node
+  ${PHM_LIB} 
+  ${catkin_LIBRARIES}
+)
+
 #############
 ## Install ##
 #############

@@ -1,0 +1,26 @@
+image_width: 640
+image_height: 480
+camera_name: thermal_flir
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [377.11914,   0.     , 184.98131,
+           0.     , 377.40952, 151.93647,
+           0.     ,   0.     ,   1.     ]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.436151, 0.242896, -0.000139, -0.000501, 0.000000]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1., 0., 0.,
+         0., 1., 0.,
+         0., 0., 1.]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [331.80774,   0.     , 182.71163,   0.     ,
+           0.     , 350.96838, 152.52462,   0.     ,
+           0.     ,   0.     ,   1.     ,   0.     ]
