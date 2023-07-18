@@ -14,8 +14,14 @@
     <arg name="thermal_node_name" default="phm_flir_spinnaker"/>
     <arg name="calibration_file"  default="file://$(find ros_flir_spinnaker)/camera_info/calibration_example.yaml" />
     <arg name="thermal_topic"     default="thermal_camera/image" />
+    <arg name="respawn"           default="false" />
+
     <group ns="phm">
+        <node pkg="ros_flir_spinnaker" name="$(arg thermal_node_name)" type="flir_node" output="screen" 
+            respawn="$(arg respawn)" >
         <param name="serial" type="str" value="$(arg thermal_serial_no)"/>
+        </node>
+
         <node pkg="ros_flir_spinnaker" name="calibration_publisher" type="calibration_publisher_node" output="screen">
             <remap from="thermal_topic"   to="$(arg thermal_topic)" />
             <param name="camera_info_url" value="$(arg calibration_file)"/>
